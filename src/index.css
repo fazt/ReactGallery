@@ -1,4 +1,4 @@
-body {
-  background: #2d3436;
-  color: #fff;
+body > #root > div {
+  height: 100vh;
+  background: #2d3436 !important;
 }

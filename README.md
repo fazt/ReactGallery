@@ -1,3 +1,10 @@
+## Variables
+
+example:
+
+ENDPOINT = nyc3.digitaloceanspaces.com
+BUCKET_NAME = myspacesname 
+
 ## Available Scripts
 
 In the project directory, you can run:
