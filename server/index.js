@@ -19,6 +19,8 @@ app.set("port", 4000);
 app.use(indexRoute);
 app.use(imagesRoutes);
 
+app.use(express.static(path.join(__dirname, "public")));
+
 app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 
 app.listen(app.get("port"));

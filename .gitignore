@@ -28,3 +28,5 @@ yarn-error.log*
 ## server
 build/
 uploads/
+server/public
+dist/

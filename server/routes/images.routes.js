@@ -14,7 +14,6 @@ router.post("/api/images/upload", async (req, res) => {
   // if there is no file returns
   if (!req.files) return res.json({ msg: "no file" });
 
-  console.log(req.body);
   const file = req.files.file;
 
   try {
@@ -61,8 +60,6 @@ router.get("/api/images/:id", async (req, res) => {
 
 router.delete("/api/images/:id", async (req, res) => {
   const deletedImage = await Image.findByIdAndDelete(req.params.id);
-
-  console.log(deletedImage);
 
   await s3
     .deleteObject({

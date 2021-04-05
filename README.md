@@ -3,7 +3,7 @@
 example:
 
 ENDPOINT = nyc3.digitaloceanspaces.com
-BUCKET_NAME = myspacesname 
+BUCKET_NAME = myspacesname
 
 ## Available Scripts
 
@@ -13,6 +13,14 @@ In the project directory, you can run:
 
 Runst a web server in devleopment mode
 Open [http://localhost:4000](http://localhost:4000) to view some endpoints
+
+### `yarn build:all`
+
+to build all the project
+
+### `yarn server:start`
+
+to the start the production server with the frontend
 
 ### `yarn start`
 
