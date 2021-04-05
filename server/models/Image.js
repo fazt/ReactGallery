@@ -3,7 +3,7 @@ import { Schema, model } from "mongoose";
 const ImageSchema = new Schema(
   {
     title: String,
-    etag: String,
+    key: String,
     url: {
       type: String,
       required: true,

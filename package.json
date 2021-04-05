@@ -23,7 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server:dev": "nodemon server/index.js --exec babel-node --ignore src"
+    "server:dev": "nodemon server/index.js --exec babel-node --ignore src",
+    "server:build": "babel server -d build"
   },
   "eslintConfig": {
     "extends": [

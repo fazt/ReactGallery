@@ -1,4 +1,4 @@
-body > #root > div {
+body, body > #root > div {
   height: 100vh;
   background: #2d3436 !important;
 }

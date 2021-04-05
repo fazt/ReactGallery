@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const ImageGallery = () => {
-  const [images, setImages] = useState([]);
   const history = useHistory();
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -13,6 +13,10 @@ const ImageGallery = () => {
       setImages(res.data);
     })();
   }, []);
+
+  if (images.length === 0) {
+    return <h1 className="h4 text-center">There are no Images yet</h1>
+  }
 
   return (
     <div className="row">

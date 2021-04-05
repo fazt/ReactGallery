@@ -28,12 +28,14 @@ router.post("/api/images/upload", async (req, res) => {
       })
       .promise();
 
+    console.log(uploadedObject);
+
     const urlImage = `https://${config.BucketName}.${config.Endpoint}/${file.name}`;
 
     // save the url in databae
     const savedImage = new Image({
       url: urlImage,
-      etag: uploadedObject.ETag,
+      key: file.name,
       title: req.body.title,
     });
 
@@ -50,6 +52,26 @@ router.post("/api/images/upload", async (req, res) => {
 router.get("/api/images", async (req, res) => {
   const images = await Image.find();
   res.json(images);
+});
+
+router.get("/api/images/:id", async (req, res) => {
+  const images = await Image.findById(req.params.id);
+  res.json(images);
+});
+
+router.delete("/api/images/:id", async (req, res) => {
+  const deletedImage = await Image.findByIdAndDelete(req.params.id);
+
+  console.log(deletedImage);
+
+  await s3
+    .deleteObject({
+      Bucket: config.BucketName,
+      Key: deletedImage.key,
+    })
+    .promise();
+
+  res.json(deletedImage);
 });
 
 export default router;
